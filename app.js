@@ -9,6 +9,7 @@ const filtersRouter = require("./routes/api/filters.js");
 const productsRouter = require("./routes/api/products");
 const contactsRouter = require("./routes/api/contacts");
 const authRouter = require("./routes/api/auth");
+const customersRouter = require("./routes/api/customerSettings");
 
 dotenv.config();
 
@@ -26,6 +27,7 @@ app.use("/api/filters", filtersRouter);
 app.use("/api/products", productsRouter);
 app.use("/api/categories", categoriesRouter);
 app.use("/api/contacts", contactsRouter);
+app.use("/api/customers", customersRouter);
 
 app.use((req, res) => {
   res.status(404).json({ message: "Not found" });
